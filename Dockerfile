@@ -1,5 +1,5 @@
 FROM debian:latest
-MAINTAINER OC
+MAINTAINER OC/DEVOPS/MELB
 
 
 RUN echo 'Installation du serveur SSH'
@@ -29,4 +29,3 @@ EXPOSE 80
 #COPY nginx/sites-available /etc/nginx/sites-available
 
 ENTRYPOINT service ssh restart && nginx -g 'daemon off;'
-#ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
