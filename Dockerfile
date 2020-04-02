@@ -1,8 +1,7 @@
 FROM debian:latest
 MAINTAINER OC/DEVOPS/MELB
 
-
-RUN echo 'Installation du serveur SSH'
+RUN echo '..Installation du serveur SSH'
 
 RUN apt-get update -y
 RUN apt-get install software-properties-common
