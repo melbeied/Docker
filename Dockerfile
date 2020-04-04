@@ -15,6 +15,8 @@ RUN echo 'root:1234567890' | chpasswd
 EXPOSE 22
 
 
+#test
+
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y dist-upgrade && \
     DEBIAN_FRONTEND=noninteractive apt-get -yq install net-tools nginx && \
