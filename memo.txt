@@ -4,3 +4,6 @@ docker rm -fv $(docker ps -aq)
 # export/save and import/load a docker image
 docker save <docker image name> | gzip > <docker image name>.tar.gz
 zcat <docker image name>.tar.gz | docker load
+
+docker save -o xxx.tar  image-name:tag #latest for exp
+docker load -i xxx.tar
