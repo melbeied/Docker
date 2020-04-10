@@ -56,7 +56,7 @@ dafa87e794a2        projet3:v1          "/bin/sh -c 'service…"   8 seconds ago
 we tag our image with a meaningful name, in this case it's : project3
 
 ```shell
-    $ docker build -t project3:v1
+    $ docker build -t project3:v1 .
 ```
 
 output 
@@ -93,7 +93,7 @@ output
 ## Instanciate containner
 
 ```shell
-    $ docker run -d -p 80:80 -p 2221:22 --name myimage projet3:latest 
+    $ docker run -d -p 80:80 -p 2221:22 --name myimage projet3:v1 
     $ docker ps
 
     >> output console
