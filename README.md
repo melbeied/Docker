@@ -56,7 +56,7 @@ dafa87e794a2        projet3:v1          "/bin/sh -c 'service…"   8 seconds ago
 we tag our image with a meaningful name, in this case it's : project3
 
 ```shell
-    $ docker build -t project3:v1 .
+    $ docker build -t project3 .
 ```
 
 output 
@@ -85,7 +85,7 @@ output
 
 ```
     REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-    projet3             v1                  609cfa1116fb        16 hours ago        359MB
+    projet3             latest              609cfa1116fb        16 hours ago        359MB
     <none>              <none>              ce53b115a4e9        16 hours ago        131MB
     debian              latest              58075fe9ecce        10 days ago         114MB
 ```
@@ -93,13 +93,13 @@ output
 ## Instanciate containner
 
 ```shell
-    $ docker run -d -p 80:80 -p 2221:22 --name myimage projet3:v1 
+    $ docker run -d -p 80:80 -p 2221:22 --name myimage projet3
     $ docker ps
 
     >> output console
 
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-dafa87e794a2        projet3:v1          "/bin/sh -c 'service…"   8 seconds ago       Up 6 seconds        22/tcp, 80/tcp      myimage
+CONTAINER ID        IMAGE               COMMAND                  CREATED              STATUS              PORTS                                      NAMES
+f118d5a191e8        projet3             "/bin/sh -c 'service…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, 0.0.0.0:2221->22/tcp   myimage
 
 ```
 
@@ -116,10 +116,9 @@ dafa87e794a2        projet3:v1          "/bin/sh -c 'service…"   8 seconds ago
 ````
 ### From the host machine that guest you vagrant vm
 
-suppose you use you forward ports like that 
+suppose you use you forward default ssh port like that 
 
 ```ruby
-    config.vm.network "forwarded_port", guest: 80, host: 8080
     config.vm.network "forwarded_port", guest: 2221, host: 2221
 ```
 the command to use is :
@@ -138,7 +137,7 @@ the command to use is :
 
 ### From the host machine that guest you vagrant vm
 
-suppose you use you forward ports like that 
+suppose you forward default http port like that 
 
 ```ruby
     config.vm.network "forwarded_port", guest: 80, host: 8080
