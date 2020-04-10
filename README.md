@@ -108,9 +108,10 @@ dafa87e794a2        projet3:v1          "/bin/sh -c 'service…"   8 seconds ago
 ### From the vm host for your docker container
 ````
     $ IP=`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' myimage`
-
     $ ssh root@$IP
+
     or
+    
     $ ssh -p 2221 root@$localhost
 ````
 ### From the host machine that guest you vagrant vm
@@ -124,7 +125,7 @@ suppose you use you forward ports like that
 the command to use is :
 
 ```shell
-    $ ssh -p2221 root@localhost
+    $ ssh -p 2221 root@localhost
 ```
 
 ## Access to Nginx welcome page
