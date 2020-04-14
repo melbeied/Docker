@@ -4,7 +4,7 @@
 we tag our image with a meaningful name, in this case it's : project3
 
 ```shell
-    $ docker build -t project3 .
+    $ docker build -t projet3 .
 ```
 
 output 
